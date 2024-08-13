@@ -5,9 +5,9 @@
     $rank = "FREE";
     $expiryDate = "0";
 
-    $paidUsers = file('Database/paid.txt', FILE_IGNORE_NEW_LINES);
-    $freeUsers = file('Database/free.txt', FILE_IGNORE_NEW_LINES);
-    $owners = file('Database/owner.txt', FILE_IGNORE_NEW_LINES);
+    $paidUsers = @file('Database/paid.txt', FILE_IGNORE_NEW_LINES);
+    $freeUsers = @file('Database/free.txt', FILE_IGNORE_NEW_LINES);
+    $owners = @file('Database/owner.txt', FILE_IGNORE_NEW_LINES);
 
     if(in_array($userId, $owners)) {
         $rank = "OWNER";
